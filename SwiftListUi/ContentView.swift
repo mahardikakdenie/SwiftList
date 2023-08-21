@@ -9,13 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        Home()
     }
 }
 
@@ -24,3 +18,60 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct Home: View {
+    var body: some View {
+        Header()
+    }
+}
+
+struct Content: View {
+    var body: some View {
+        List {
+            VStack {
+                ZStack {
+//                    Image()
+                }
+            }
+        }
+    }
+}
+
+struct Header: View {
+    var body: some View {
+        NavigationView {
+            Text("Helo inI Kontent")
+                .navigationBarItems(
+                    
+                    leading: HStack {
+                    Button(action: {print("Helo Button")}) {
+                        Image("youtube-logo").renderingMode(.original).resizable()
+                            .frame(width: 90, height: 50)
+                    }
+                },
+                    trailing:
+                        HStack(spacing: 10) {
+                            Button(action: {print("Helo Button")}) {
+                                Image(systemName: "tray.full").foregroundColor(Color.secondary)
+                            }
+                            
+                            Button(action: {print("Helo Button")}) {
+                                Image(systemName: "video.fill").foregroundColor(Color.secondary)
+                            }
+
+                            Button(action: {print("Helo Button")}) {
+                                Image(systemName: "magnifyingglass").foregroundColor(Color.secondary)
+                            }
+
+                            
+                            Button(action: {print("Helo Button")}) {
+                                Image("profile").renderingMode(.original)
+                                    .resizable().frame(width: 20, height: 20).clipShape(Circle())
+                            }
+
+                        }
+                )
+        }
+    }
+}
+ 
